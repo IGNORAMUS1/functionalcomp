@@ -5,10 +5,11 @@ const useFetch = (url) => {
     const [data, setData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
+    const abortConst = new AbortController();
 
     useEffect(() => {
         setTimeout(() => {
-            fetch(url)
+            fetch(url, { signal: abortConst.signal })
             .then(res => {
                 if (!res.ok) {
                     throw Error(`Couldn't fetch data from the database.`)
@@ -24,6 +25,9 @@ const useFetch = (url) => {
                 setIsLoading(false);
                 setError(err.message);
             })
+
+            // abort fetch
+            return () => abortConst.abort();
         }, 2000)
     }, [])
 

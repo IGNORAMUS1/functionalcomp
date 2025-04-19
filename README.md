@@ -10,3 +10,9 @@ Currently, two official plugins are available:
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+### Functionalities
+
+This app make use of 'useFetch.jsx', a custom hook, to fetch dynamic data from an endpoint. It carefully updates the data if it connect to the endpoint successfully and also handles errors encounter when fetching data e.g couldn't connect to the database. This custom hook is reusable.
+
+It also make use of 'ListComponent.jsx' component to render the list dynamic data fetched from the endpoint.
