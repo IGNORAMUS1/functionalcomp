@@ -13,11 +13,11 @@ const useFetch = (url) => {
                 if (!res.ok) {
                     throw Error(`Couldn't fetch data from the database.`)
                 } else {
-                res.json();
+                return res.json();
                 }
             })
             .then(data => {
-                setData(data);
+                setData(data.slice(0, 10));
                 setIsLoading(false);
             })
             .catch((err) => {

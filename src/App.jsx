@@ -1,9 +1,8 @@
 import useFetch from './useFetch';
-import './App.css'
 import ListComponent from './ListComponent';
 
 function App() {
-  const [data, isLoading, error] = useFetch('https://jsonplaceholder.typicode.com/photos');
+  const [data, isLoading, error] = useFetch('https://jsonplaceholder.typicode.com/posts');
 
 
   return (

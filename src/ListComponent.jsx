@@ -5,9 +5,10 @@ const ListComponent = ({ data, isLoading, error }) => {
             {isLoading && <p>Loading...</p>}
             { error && <p>{ error }</p>}
             { data && <ul>{
-                data.map((image) => (
-                    <li key={image.id}>
-                        <img src={image.url} alt={image.title} />
+                data.map((post) => (
+                    <li key={post.id}>
+                        <h2>{ post.title }</h2>
+                        <p>{ post.body }</p>
                     </li>
                 ))}</ul>
             }
